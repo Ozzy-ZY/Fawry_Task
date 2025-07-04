@@ -28,4 +28,11 @@ public class Cart {
     public ArrayList<CartItem> getItems() {
         return cartItems;
     }
+    @Override
+    public String toString() {
+        return "Cart{" +
+                "customerEmail='" + customerEmail + '\'' +
+                ", subTotal=" + subTotal +
+                '}';
+    }
 }
