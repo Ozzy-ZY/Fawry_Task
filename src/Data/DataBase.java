@@ -54,8 +54,10 @@ public class DataBase {
         products.put("tv", new ShippableProduct(
                 "tv",500, 6, 3000));
         products.put("scratchcard", new BasicProduct("scratchcard", 8,20));
-        // adding customers and their carts
+        products.put("expiredMilk", new ShippableExpirableProduct("expiredMilk", 5.0, 10, LocalDate.now().minusDays(5), 250));
+
         addCustomer(new Customer("Zyad", "01011113221", "zyad@gmail.com", "Giza", 2000));
+        addCustomer(new Customer("Ahmed", "0103122222", "ahmed@gmail.com", "Alexandria", 50.0));
         addCustomer(new Customer("Mahmoud", "01011113222", "mahmoud@gmail.com", "Cairo", 1000));
     }
 }
