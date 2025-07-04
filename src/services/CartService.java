@@ -53,7 +53,9 @@ public class CartService {
             return true;// as it does not exist in the cart in the first place
         }
         cart.cartItems.remove(item);
-        DataBase.products.get(productName).setQuantity(DataBase.products.get(productName).getQuantity() + quantity);
+        DataBase.products.get(productName).setQuantity(DataBase.products.get(productName).getQuantity() + item.getQuantity());
+        double newSubTotal = cart.getSubTotal() - item.getQuantity() * DataBase.products.get(productName).getPrice();
+        cart.setSubTotal(newSubTotal);
         return true;
     }
     public static boolean RemoveFromCart(String customerEmail, String productName){
@@ -76,12 +78,16 @@ public class CartService {
             item.setQuantity(item.getQuantity() - 1);
         }
         DataBase.products.get(productName).setQuantity(DataBase.products.get(productName).getQuantity() + 1);
+        double newSubTotal = cart.getSubTotal() - item.getQuantity() * DataBase.products.get(productName).getPrice();
+        cart.setSubTotal(newSubTotal);
         return true;
     }
     public static Cart GetCart(String customerEmail){
         return DataBase.carts.get(customerEmail);
     }
     public static void ClearCart(String customerEmail){
-        DataBase.carts.get(customerEmail).getItems().clear();
+        var cart = DataBase.carts.get(customerEmail);
+        cart.getItems().clear();
+        cart.setSubTotal(0.0d);
     }
 }

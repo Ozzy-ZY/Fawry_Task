@@ -54,6 +54,7 @@ public class CheckoutService {
         System.out.println("Amount\t"+ totalAmount);
         System.out.println("---------------------");
         System.out.println("New Balance for customer\t"+ customer.getBalance());
+        CartService.ClearCart(customerEmail);
     }
     private static ShippableQuantityPair getShippableItems(Cart cart){
         ArrayList<Shippable> shippableItems = new ArrayList<>();
@@ -87,6 +88,7 @@ public class CheckoutService {
             }
             if(product.getQuantity() < cartItem.getQuantity()){
                 System.out.println("stock quantity is not enough");
+                return false;
             }
             if (product instanceof Expirable expirableProduct) {
                 if (expirableProduct.isExpired()) {

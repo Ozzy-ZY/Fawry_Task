@@ -7,9 +7,9 @@ import java.util.ArrayList;
 public class ShippableQuantityPair {
     private ArrayList<Shippable> shippableProducts;
     private ArrayList<Integer> quantities;
-    public ShippableQuantityPair(ArrayList<Shippable> shippableProducts, ArrayList<Integer> quantites){
+    public ShippableQuantityPair(ArrayList<Shippable> shippableProducts, ArrayList<Integer> quantities){
         this.setShippableProducts(shippableProducts);
-        this.setQuantities(quantites);
+        this.setQuantities(quantities);
     }
 
     public ArrayList<Shippable> getShippableProducts() {
