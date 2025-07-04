@@ -5,10 +5,11 @@ import models.contracts.Expirable;
 import java.time.LocalDate;
 
 public class ShippableExpirableProduct extends ShippableProduct implements Expirable {
-    private LocalDate expirationDate;
+    protected LocalDate expirationDate;
 
-    public ShippableExpirableProduct(String name, double price, int quantity) {
+    public ShippableExpirableProduct(String name, double price, int quantity, LocalDate expirationDate) {
         super(name, price, quantity);
+        this.expirationDate = expirationDate;
     }
 
     @Override
