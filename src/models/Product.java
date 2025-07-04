@@ -21,7 +21,18 @@ public abstract class Product {
     public void setQuantity(int quantity){
         this.quantity = quantity;
     }
-    public void setName(){
-
+    public void setName(String name){
+        this.name = name;
+    }
+    public void setPrice(double price){
+        this.price = price;
+    }
+    @Override
+    public String toString() {
+        return "Product{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                '}';
     }
 }
