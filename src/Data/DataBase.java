@@ -48,14 +48,14 @@ public class DataBase {
     }
     public static void seedDatabase(){
         products.put("cheese", new ShippableExpirableProduct(
-                "Cheese",10, 4, LocalDate.now().plusDays(10), 500));
+                "cheese",10, 4, LocalDate.now().plusDays(10), 500));
         products.put("biscuits", new ShippableExpirableProduct(
-                "Biscuits",5, 8, LocalDate.now().plusDays(30), 100));
+                "biscuits",5, 8, LocalDate.now().plusDays(30), 100));
         products.put("tv", new ShippableProduct(
-                "Tv",500, 6, 3000));
-        products.put("scratchCard", new BasicProduct("ScratchCard", 8,20));
+                "tv",500, 6, 3000));
+        products.put("scratchcard", new BasicProduct("scratchcard", 8,20));
         // adding customers and their carts
-        addCustomer(new Customer("Zyad", "01011113221", "Zyad@gmail.com", "Giza", 2000));
-        addCustomer(new Customer("Mahmoud", "01011113222", "Mahmoud@gmail.com", "Cairo", 1000));
+        addCustomer(new Customer("Zyad", "01011113221", "zyad@gmail.com", "Giza", 2000));
+        addCustomer(new Customer("Mahmoud", "01011113222", "mahmoud@gmail.com", "Cairo", 1000));
     }
 }
